@@ -27,6 +27,7 @@ int main(){
     Car_voidInit();
     /*******************/
 
+
     while(1){
         // Center the servo
         servo_SetAngle(90, 'A');
@@ -43,12 +44,11 @@ int main(){
             // Obstacle detected, stop and decide direction
             Car_voidMoveStop();
 
-            //! Decide which direction to turn
+            // Decide which direction to turn
             char turnDirection = Car_charCheckDirection(&ultraSonic_Sensor);
 
             switch (turnDirection) {
-
-            	case 'L':
+                case 'L':
                     Car_voidTurnLeft(TURN_DURATION_MS);
                     break;
 
@@ -65,14 +65,13 @@ int main(){
                     break;
             }
 
-            // After turning, move forward for a while
-            Car_voidMoveForward();
-            _delay_ms(500); // Adjust the duration as needed
+
         }
 
         // Small delay to prevent rapid looping
-        _delay_ms(250);
+        _delay_ms(100);
     }
+
 
     return 0;
 }

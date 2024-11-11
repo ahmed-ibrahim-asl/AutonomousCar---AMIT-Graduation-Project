@@ -27,8 +27,8 @@ void Car_voidMoveStop(void);
 void Car_voidMoveRight(void);
 void Car_voidMoveLeft(void);
 
-void Car_voidTurnLeft(uint16_t duration_ms);
-void Car_voidTurnRight(uint16_t duration_ms);
+void Car_voidTurnLeft(uint16_t copy_u16Duration_ms);
+void Car_voidTurnRight(uint16_t copy_u16Duration_ms);
 ///////////
 
 char Car_charCheckDirection(ultraSonic_t* ultraSonic_Sensor);
