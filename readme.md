@@ -4,16 +4,14 @@ Welcome to the AMIT Graduation Project. This autonomous car is built using an AT
 
 ---
 
-## Project Overview
 
-### Autonomous Car Image
+### Car Image
 <p align="center">
   <img src="Media/car_build_image.jpeg" alt="Autonomous Car" width="60%">
 </p>
 
 ---
 
-## Demonstration
 
 ### Car Test Animation
 <p align="center">
