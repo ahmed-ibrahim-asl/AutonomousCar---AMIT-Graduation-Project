@@ -12,7 +12,7 @@
 
 
 int main(){
-    /******* UltraSonic init *******/
+    /******************* UltraSonic INIT *******************/
     ultraSonic_t ultraSonic_Sensor;
 
     ultraSonic_Sensor.ECHO_PORT = ultraSonic_ECHO_PORT;
@@ -20,24 +20,24 @@ int main(){
     ultraSonic_Sensor.TRIG_PORT = ultraSonic_TRIG_PORT;
     ultraSonic_Sensor.TRIG_PIN  = ultraSonic_TRIG_PIN;
 
-    ultraSonic_enuInit(ultraSonic_Sensor); // Pass pointer correctly
-    /*******************/
+    ultraSonic_enuInit(ultraSonic_Sensor);
+    /*******************************************************/
 
-    /******** Car init *********/
+	/********************** Car INIT ***********************/
     Car_voidInit();
-    /*******************/
+	/*******************************************************/
 
+
+    uint16_t local_u16distance;
 
     while(1){
-        // Center the servo
-        servo_SetAngle(90, 'A');
-        _delay_ms(500); // Allow servo to stabilize
 
         // Get distance ahead
         ultraSonic_u16GetDistance(&ultraSonic_Sensor);
-        uint16_t distance = ultraSonic_Sensor.measuredDistance_InCm;
+        local_u16distance = ultraSonic_Sensor.measuredDistance_InCm;
 
-        if(distance >= OBSTACLE_DISTANCE_THRESHOLD && distance <= MAX_DISTANCE){
+
+        if(local_u16distance >= OBSTACLE_DISTANCE_THRESHOLD && local_u16distance <= MAX_DISTANCE){
             // Path is clear, move forward
             Car_voidMoveForward();
         } else {
@@ -45,9 +45,8 @@ int main(){
             Car_voidMoveStop();
 
             // Decide which direction to turn
-            char turnDirection = Car_charCheckDirection(&ultraSonic_Sensor);
 
-            switch (turnDirection) {
+            switch (Car_charCheckDirection(&ultraSonic_Sensor)) {
                 case 'L':
                     Car_voidTurnLeft(TURN_DURATION_MS);
                     break;

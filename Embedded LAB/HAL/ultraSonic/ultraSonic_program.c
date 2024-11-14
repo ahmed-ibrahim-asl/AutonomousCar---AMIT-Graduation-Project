@@ -46,6 +46,8 @@ ErrorStatus_t ultraSonic_enuInit(ultraSonic_t ultraSonic_Instance){
 
 
 void ultraSonic_u16GetDistance(ultraSonic_t* ultraSonic_Instance){
+
+	Timer1_SetupForTimeMeasurement(8);
 	uint8_t Local_u8EchoPinStatus = 0;
 
 	// Send a 10µs pulse to the trigger pin

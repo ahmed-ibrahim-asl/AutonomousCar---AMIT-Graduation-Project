@@ -11,8 +11,9 @@
 
 //! This very critcial,  Ensure the system runs at the specified frequency
 
-
+#ifndef F_CPU
 #define F_CPU 16000000
+#endif
 
 typedef struct{
 	uint8_t ECHO_PORT;

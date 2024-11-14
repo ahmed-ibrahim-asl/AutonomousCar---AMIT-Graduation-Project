@@ -18,6 +18,13 @@
 /*****************************************************************/
 
 
+
+#ifndef F_CPU
+	#define F_CPU 16000000
+#endif
+
+
+
 /************************** Car Movment **************************/
 void Car_voidInit(void);
 void Car_voidMoveForward(void);
@@ -29,14 +36,15 @@ void Car_voidMoveLeft(void);
 
 void Car_voidTurnLeft(uint16_t copy_u16Duration_ms);
 void Car_voidTurnRight(uint16_t copy_u16Duration_ms);
-///////////
+/*****************************************************************/
 
+
+
+/************************ Scanning Logic *************************/
 char Car_charCheckDirection(ultraSonic_t* ultraSonic_Sensor);
+/*****************************************************************/
 
 
-#ifndef F_CPU
-	#define F_CPU 16000000
-#endif
 
 
 #endif /* APP_APP_H_ */
