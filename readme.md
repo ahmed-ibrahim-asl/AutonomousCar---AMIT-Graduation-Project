@@ -2,21 +2,6 @@
 
 This project aims to implement a self-driving car that can avoid obstacles with very fast response times. The car is built using an ATmega32 microcontroller, ultrasonic sensor, servo motor, and additional components to facilitate autonomous navigation.
 
----
-
-### Car Image
-<p align="center">
-  <img src="Media/car_build_image.jpeg" alt="Autonomous Car" width="60%">
-</p>
-
----
-
-### Car Test Animation
-<p align="center">
-  <img src="Media/car_test.gif" alt="Car Test Animation" width="60%">
-</p>
-
----
 
 ## Project Specifications
 
@@ -46,3 +31,18 @@ This project aims to implement a self-driving car that can avoid obstacles with 
 - **Servo Motor**: Used to rotate the ultrasonic sensor for scanning
 
 
+---
+
+### Car Image
+<p align="center">
+  <img src="Media/car_build_image.jpeg" alt="Autonomous Car" width="60%">
+</p>
+
+---
+
+### Car Test Animation
+<p align="center">
+  <img src="Media/car_test.gif" alt="Car Test Animation" width="60%">
+</p>
+
+---
